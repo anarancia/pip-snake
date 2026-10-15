@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PiP Snake</title>
+  <!-- monté sous un sous-chemin (/snake) : sans slash final, les URL relatives pointent sur la racine du domaine -->
+  <script>if (!/\/$|\.html$/.test(location.pathname)) location.replace(location.pathname + '/' + location.search + location.hash);</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
