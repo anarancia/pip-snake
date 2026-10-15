@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PiP Snake</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>PiP Snake</h1>
+  <p>Un petit snake dans une fenêtre toujours au premier plan. Tu continues à lire et scroller les autres onglets pendant qu'il tourne.</p>
+  <p id="unsupported" hidden>Ton navigateur n'a pas le Document Picture-in-Picture (Chrome/Edge 116+). On passe en mode vidéo : les flèches marchent tant que cet onglet reste actif.</p>
+  <p><button id="launch" type="button">Lancer le snake</button> <span id="status" role="status"></span></p>
+
+  <h2>Comment ça marche</h2>
+  <ol>
+    <li>Clic sur le bouton pour lancer.</li>
+    <li>Clic sur la fenêtre pour jouer (flèches, WASD ou ZQSD ; Espace = pause ; Entrée = rejouer).</li>
+    <li>Clic ailleurs = pause.</li>
+  </ol>
+
+  <h2>Réglages</h2>
+  <form id="settings">
+    <label>Taille
+      <select name="size"><option>180</option><option>220</option><option>300</option></select>
+    </label>
+    <label>Vitesse
+      <select name="speed"><option value="lent">Lent</option><option value="normal">Normal</option><option value="rapide">Rapide</option></select>
+    </label>
+    <label>Couleur du snake <input type="color" name="color"></label>
+    <label><input type="checkbox" name="wrap"> Traverser les murs</label>
+  </form>
+  <p>Meilleur score : <strong id="best">0</strong></p>
+
+  <div id="fallback" hidden>
+    <canvas id="fallback-canvas" class="offscreen" aria-hidden="true"></canvas>
+    <video id="fallback-video" muted autoplay playsinline></video>
+    <p>Score : <span id="fallback-score">0</span> · <button id="fallback-stop" type="button">Arrêter</button></p>
+    <p>Pas de PiP automatique ? Survole la vidéo et clique le bouton Picture-in-Picture du navigateur.</p>
+  </div>
+
+  <script src="snake.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

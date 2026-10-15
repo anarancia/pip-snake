@@ -1,0 +1,8 @@
+body { max-width: 32rem; margin: 3rem auto; padding: 0 1rem; font: 16px/1.5 system-ui, sans-serif; color: #333; background: #fff; }
+h1 { font-size: 1.5rem; }
+button { padding: .6rem 1.2rem; font: inherit; border: 1px solid #999; border-radius: 6px; background: #fff; cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+#settings label { display: block; margin: .4rem 0; }
+#unsupported, #status { color: #a44; }
+.offscreen { position: absolute; left: -9999px; }
+#fallback video { display: block; max-width: 100%; }
